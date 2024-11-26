@@ -44,3 +44,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.keymap.set('i', 'jk', '<Esc>', { silent = true })
+vim.keymap.set('i', 'kj', '<Esc>', { silent = true })
+vim.keymap.set('t', 'jk', '<C-\\><C-n>', { silent = true })
+vim.keymap.set('t', 'kj', '<C-\\><C-n>', { silent = true })
+
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
