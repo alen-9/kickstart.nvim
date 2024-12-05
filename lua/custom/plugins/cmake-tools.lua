@@ -79,7 +79,7 @@ return {
             -- direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
             -- direction = "tab", -- 'vertical' | 'horizontal' | 'tab' | 'float'
             -- close_on_exit = false, -- whether close the terminal when exit
-            direction = 'vertical', -- 'vertical' | 'horizontal' | 'tab' | 'float'
+            direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float'
             close_on_exit = true, -- whether close the terminal when exit
             singleton = false, -- single instance, autocloses the opened one, if present
             auto_scroll = false, -- whether auto scroll to the bottom
@@ -110,6 +110,11 @@ return {
         refresh_rate_ms = 100, -- 图标切换频率
       },
       cmake_virtual_text_support = true, -- 开启虚拟文本支持，展示与当前文件相关的构建目标（位于编辑器右边缘）
+
+      vim.keymap.set('n', 'cmg', '<cmd>wa<CR><cmd>CMakeGenerate<CR>', { silent = true, desc = 'CMakeGenerate' }),
+      vim.keymap.set('n', 'cmb', '<cmd>wa<CR><cmd>CMakeBuild<CR>', { silent = true, desc = 'CMakeBuild' }),
+      vim.keymap.set('n', 'cmr', '<cmd>wa<CR><cmd>CMakeRun<CR>', { silent = true, desc = 'CMakeRun' }),
+      vim.keymap.set('n', 'cms', '<cmd>wa<CR><cmd>CMakeStopRunner<CR>', { silent = true, desc = 'CMakeStopRunner' }),
     }
   end,
 }
