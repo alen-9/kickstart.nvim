@@ -2,6 +2,7 @@ return {
   'Civitasv/cmake-tools.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'akinsho/toggleterm.nvim',
   },
   config = function()
     require('cmake-tools').setup {
@@ -41,7 +42,7 @@ return {
           },
           toggleterm = {
             direction = 'horizontal', -- 'vertical' | 'horizontal' | 'tab' | 'float'
-            close_on_exit = true, -- whether close the terminal when exit
+            close_on_exit = false, -- whether close the terminal when exit
             auto_scroll = true, -- whether auto scroll to the bottom
           },
           overseer = {},
@@ -73,14 +74,14 @@ return {
             position = 'belowright', -- "bottom", "top"
             size = 6,
             encoding = 'utf-8',
-            auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
+            auto_close_when_success = false, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
           },
           toggleterm = {
             -- direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
             -- direction = "tab", -- 'vertical' | 'horizontal' | 'tab' | 'float'
             -- close_on_exit = false, -- whether close the terminal when exit
             direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float'
-            close_on_exit = true, -- whether close the terminal when exit
+            close_on_exit = false, -- whether close the terminal when exit
             singleton = false, -- single instance, autocloses the opened one, if present
             auto_scroll = false, -- whether auto scroll to the bottom
           },

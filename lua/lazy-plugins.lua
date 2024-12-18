@@ -51,6 +51,7 @@ require('lazy').setup({
   { import = 'custom.plugins' },
   require 'custom.plugins.toggleterm',
   require 'custom.plugins.cmake-tools',
+  require 'custom.plugins.nvim_comment',
 
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`

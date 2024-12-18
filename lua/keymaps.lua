@@ -52,3 +52,7 @@ vim.keymap.set('t', 'kj', '<C-\\><C-n>', { silent = true })
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- 头文件/源文件跳转
+vim.keymap.set({ 'v', 'n' }, 'go', '<cmd>ClangdSwitchSourceHeader<CR>', { silent = true })
+vim.keymap.set({ 'v', 'n' }, 'gO', '<cmd>split | ClangdSwitchSourceHeader<CR>', { silent = true })
