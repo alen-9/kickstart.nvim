@@ -56,3 +56,7 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- 头文件/源文件跳转
 vim.keymap.set({ 'v', 'n' }, 'go', '<cmd>ClangdSwitchSourceHeader<CR>', { silent = true })
 vim.keymap.set({ 'v', 'n' }, 'gO', '<cmd>split | ClangdSwitchSourceHeader<CR>', { silent = true })
+
+vim.keymap.set('n', '<leader>th', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = 'Toggle Inlay Hints' })

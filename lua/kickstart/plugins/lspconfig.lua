@@ -16,6 +16,9 @@ return {
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
+    opts = {
+      inlay_hints = { enabled = true },
+    },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
@@ -177,9 +180,26 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        clangd = {
+          capabilities = {
+            textDocument = {
+              inlayHint = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+          init_options = {
+            clangdFileStatus = true,
+            inlayHints = {
+              designators = true,
+              enabled = true,
+              parameterNames = true,
+              deducedTypes = true,
+            },
+          },
+        },
         cmake = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
