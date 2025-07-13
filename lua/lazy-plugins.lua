@@ -19,7 +19,7 @@ require('lazy').setup({
   --
   -- Use `opts = {}` to force a plugin to be loaded.
 
-  require 'kickstart/plugins/tokyonight',
+  -- require 'kickstart/plugins/tokyonight',
   require 'kickstart/plugins/gitsigns',
   require 'kickstart/plugins/which-key',
   require 'kickstart/plugins/telescope',
@@ -48,11 +48,13 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  { import = 'custom.plugins' },
+  -- { import = 'custom.plugins' },
   require 'custom.plugins.toggleterm',
   require 'custom.plugins.cmake-tools',
   require 'custom.plugins.nvim_comment',
-
+  require 'custom.plugins.tmux',
+  -- require 'custom.plugins.gruvbox',
+  require 'custom.plugins.onedark',
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
