@@ -55,6 +55,7 @@ require('lazy').setup({
   require 'custom.plugins.tmux',
   -- require 'custom.plugins.gruvbox',
   require 'custom.plugins.onedark',
+  require 'custom.plugins.null-ls',
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
