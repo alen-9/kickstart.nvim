@@ -197,6 +197,12 @@ return {
               deducedTypes = true,
             },
           },
+          cmd = {
+            'clangd',
+            '--function-arg-placeholders',
+            '--header-insertion=iwyu',
+            '--completion-style=detailed', -- 更详细的补全信息
+          },
         },
         cmake = {},
         gopls = {},
